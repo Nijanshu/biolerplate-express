@@ -15,7 +15,7 @@ console.log("Hello World")
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/views/index.html');
 })
-app.get('/method',(req,res)=>{
+app.get('/json',(req,res)=>{
     console.log(`${req.method} ${req.url} - ${req.ip}`);
 })
 
