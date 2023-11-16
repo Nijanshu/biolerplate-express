@@ -12,7 +12,7 @@ console.log("Hello World")
 // })
 
 app.get('/',(req,res)=>{
-    res.sendFile('./views/index.html',{root:__dirname});
+    res.sendFile(__dirname+'/views/index.html');
 })
 
 
