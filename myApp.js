@@ -8,7 +8,7 @@ console.log("Hello World")
 
 
 app.get('/', function(req, res){
-    console.log("Hello Express")
+    res.send("Hello Express")
 })
 
 
