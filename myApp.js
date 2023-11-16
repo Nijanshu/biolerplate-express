@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 
-
+const cas=process.env.MESSAGE_STYLE;
 
 
 console.log("Hello World")
@@ -11,17 +11,22 @@ console.log("Hello World")
 //     res.send("Hello Express")
 // })
 
-// app.get('/',(req,res)=>{
-//     res.sendFile(__dirname+'/views/index.html');
-// })
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/views/index.html');
+})
 
 
-// app.use("/public", express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 
 
 
 app.get('/json', function(req, res){
-    res.json({"message": "Hello json"});
+    if(cas=='uppercase'){
+        res.json({"message": "HELLO JSON"});
+    }
+    else{
+        res.json({"message": "Hello json"});
+    }
 })
 
 
