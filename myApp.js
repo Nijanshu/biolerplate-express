@@ -16,7 +16,8 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/views/index.html');
 })
 app.get('/method',(req,res,next)=>{
-    console.log(`${req.method} ${req.url} - ${req.ip}`);
+var string = req.method + " " + req.path + " - " + req.ip;
+console.log(string)
     next();
 })
 
