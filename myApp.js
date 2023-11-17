@@ -1,10 +1,12 @@
 let express = require('express');
 let app = express();
+let bodyParser= require('body-parser');
 require('dotenv').config();
 
 const cas=process.env.MESSAGE_STYLE;
 
-
+app.use(bodyParser.urlencoded({ extended: false }));// express 10
+app.use(bodyParser.json());// express
 console.log("Hello World")
 
 
