@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const cas=process.env.MESSAGE_STYLE;
 
-app.use(bodyParser.urlencoded({ extended: false }));// express 10
+app.use(bodyParser.urlencoded({ extended: false }));// express 11
 app.use(bodyParser.json());// express
 console.log("Hello World")
 
@@ -51,11 +51,16 @@ app.get('/:word/echo',(req, res)=>{   // Express 9
     res.json({echo:word})
 })
 
-app.get('/name',(req, res)=>{   // Express 9
+app.get('/name',(req, res)=>{   // Express 10
     let word = req.query;
     let first= word.first
     let last= word.last;
 
     res.json({name:`${first} ${last}`})
+})
+
+app.post('/name',(req, res)=>{   // Express 12
+    var string= req.body.first+" "+ req.body.last;
+    res.json({name:string})
 })
  module.exports = app;
