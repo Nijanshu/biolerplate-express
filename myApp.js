@@ -42,4 +42,10 @@ app.get('/now', (req, res, next) => {   //EXpress 8
 (req, res)=>{
 res.json({time: req.time});
 })
+
+
+app.get('/:word/echo',(req, res)=>{
+    let word = req.params.word;
+    res.json({echo:word})
+})
  module.exports = app;
