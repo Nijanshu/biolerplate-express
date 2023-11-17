@@ -44,8 +44,16 @@ res.json({time: req.time});
 })
 
 
-app.get('/:word/echo',(req, res)=>{
+app.get('/:word/echo',(req, res)=>{   // Express 9
     let word = req.params.word;
     res.json({echo:word})
+})
+
+app.get('/name',(req, res)=>{   // Express 9
+    let word = req.query;
+    let first= word.first
+    let last= word.last;
+
+    res.json({name:`${first} ${last}`})
 })
  module.exports = app;
