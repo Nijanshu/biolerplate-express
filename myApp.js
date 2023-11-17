@@ -15,7 +15,7 @@ console.log("Hello World")
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/views/index.html');
 })
-app.get('/json',(req,res,next)=>{
+app.get('/method',(req,res,next)=>{
 var string = req.method + " " + req.path + " - " + req.ip;
 console.log(string)
     next();
@@ -35,7 +35,7 @@ app.get('/json', function(req, res){
     }
 })
 
-app.get('/now', (req, res, next) => {
+app.get('/now', (req, res, next) => {   //EXpress 8
    req.time= new Date().toString();
    next();
 },
